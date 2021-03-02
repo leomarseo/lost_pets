@@ -1,0 +1,7 @@
+<%= simple_form_for(@pet) do |t| %>
+  <%= t.input :name %>
+  <%= t.input :address %>
+  <%= t.input :species, collection: Pet::SPECIES %>
+  <%= t.input :found_on %>
+  <%= t.submit %>
+<% end %>

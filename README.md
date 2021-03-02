@@ -1,24 +1,38 @@
-# README
+VERB      URL           CONTROLLER_ACTION         ACTIVE_RECORD_METHOD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+As a user I can see all found pets
+GET       '/pets'            index                     Pet.all
 
-Things you may want to cover:
 
-* Ruby version
+As a user I can see details about one found pet (when and where it was found)
+GET       '/pets/:id'        show                      Pet.find(id)
 
-* System dependencies
 
-* Configuration
+As a user I can add a pet I found
+GET       '/pets/new'        new                       Pet.new
+POST      '/pets'            create                    Pet.create(attributes)
 
-* Database creation
 
-* Database initialization
+As a user I can update a pet
+GET       '/pets/:id/edit'   edit                      Pet.find(id)
+PATCH     '/pets/:id'        update                    Pet.update(attributes)
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+As a user I can delete a pet
+DELETE    '/pets/:id'        destroy                   Pet.find(id).destroy
 
-* Deployment instructions
 
-* ...
+### ADD BOOTSTRAP AND SIMPLE_FORM
+
+`terminal`
+yarn add bootstrap
+
+`application.scss`
+@import "bootstrap/scss/bootstrap"
+
+`gemfile`
+gem 'simple_form'
+
+`terminal`
+bundle install
+rails generate simple_form:install --bootstrap

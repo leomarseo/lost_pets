@@ -1,0 +1,9 @@
+<%= link_to 'go back', pets_path %>
+
+<p><%= @pet.name %></p>
+<p><%= @pet.address %></p>
+<p><%= @pet.species %></p>
+<p><%= @pet.found_days_ago %></p>
+
+<%= link_to 'edit', edit_pet_path(@pet) %>
+<%= link_to 'delete', pet_path(@pet), method: :delete, data: { confirm: "are you sure" } %>

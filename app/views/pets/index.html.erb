@@ -1,0 +1,7 @@
+<% @pets.each do |pet| %>
+  <p><%= link_to pet.name, pet_path(pet.id) %> - <%= pet.found_days_ago %></p>
+  <p><%= pet.address %></p>
+  <p><%= pet.species %></p>
+<% end %>
+
+<%= link_to 'add a pet', pets_new_path %>
